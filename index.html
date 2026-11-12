@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CloudFix Tech | IT support, cybersecurity and cloud education</title>
+  <meta name="description" content="CloudFix Tech is a young brand in IT support, cybersecurity awareness and cloud education, based in L'Aquila, Italy. Services launching in 2027.">
+  <link rel="canonical" href="https://cloudfix.tech/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CloudFix Tech">
+  <meta property="og:description" content="IT support, cybersecurity awareness and cloud education. Launching 2027.">
+  <meta property="og:url" content="https://cloudfix.tech/">
+  <meta name="color-scheme" content="light dark">
+  <style>
+    :root {
+      --bg: #EAF3FB; --surface: #F6FAFE; --ink: #10203A; --muted: #4B5B73; --line: #D3E0EE;
+      --accent: #0B7285; --accent-ink: #FFFFFF; --accent-soft: #DDF1F5; --navy: #14243B;
+      --font: Inter, "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0B111A; --surface: #121A26; --ink: #E8EDF4; --muted: #9AA7BA; --line: #233044;
+              --accent: #5CC8D7; --accent-ink: #06222A; --accent-soft: #123039; }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 1.05rem; line-height: 1.6; }
+    a { color: var(--accent); }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 1.25rem; }
+    header { border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 88%, transparent); position: sticky; top: 0; backdrop-filter: blur(8px); z-index: 10; }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { display: flex; align-items: center; gap: .6rem; font-weight: 700; color: var(--ink); text-decoration: none; font-size: 1.15rem; }
+    .brand img { width: 34px; height: 34px; }
+    .brand span b { color: var(--accent); }
+    nav a { margin-left: 1.3rem; color: var(--muted); text-decoration: none; font-weight: 500; font-size: .95rem; }
+    nav a:hover { color: var(--ink); }
+    .btn { display: inline-block; background: var(--accent); color: var(--accent-ink); font-weight: 600; text-decoration: none; padding: .75rem 1.3rem; border-radius: 999px; border: 1px solid var(--accent); }
+    .btn-ghost { background: transparent; color: var(--accent); }
+    .hero { padding-top: 5rem; padding-bottom: 3.5rem; display: grid; grid-template-columns: 1.4fr 1fr; gap: 2.5rem; align-items: center; }
+    .badge { display: inline-block; font-size: .82rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: .3rem .8rem; border-radius: 999px; margin-bottom: 1.1rem; }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 1rem; }
+    .lead { color: var(--muted); font-size: 1.15rem; max-width: 34rem; margin: 0 0 1.6rem; }
+    .cta { display: flex; gap: .8rem; flex-wrap: wrap; }
+    .hero-art { display: flex; justify-content: center; }
+    .hero-art img { width: min(280px, 70%); filter: drop-shadow(0 18px 30px rgba(20,36,59,.25)); }
+    section { padding: 3rem 0; }
+    h2 { font-size: 1.7rem; letter-spacing: -0.01em; margin: 0 0 .5rem; }
+    .sub { color: var(--muted); margin: 0 0 2rem; max-width: 40rem; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 1.5rem; }
+    .card h3 { margin: 0 0 .5rem; font-size: 1.15rem; }
+    .card p { margin: 0; color: var(--muted); font-size: .98rem; }
+    .icon { width: 44px; height: 44px; border-radius: 12px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; margin-bottom: 1rem; font-weight: 700; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; counter-reset: s; }
+    .steps div { border-left: 3px solid var(--accent); padding: .2rem 0 .2rem 1rem; }
+    .steps b { display: block; margin-bottom: .2rem; }
+    .steps span { color: var(--muted); font-size: .97rem; }
+    .about { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 2rem; }
+    .about p { color: var(--muted); max-width: 44rem; margin: 0 0 1.2rem; }
+    .contact { text-align: center; }
+    .contact p { color: var(--muted); max-width: 34rem; margin: 0 auto 1.5rem; }
+    footer { border-top: 1px solid var(--line); padding: 1.5rem 0; color: var(--muted); font-size: .92rem; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; padding-top: 3rem; }
+      .hero-art { order: -1; justify-content: flex-start; }
+      .hero-art img { width: 120px; }
+      .grid, .steps { grid-template-columns: 1fr; }
+      nav a:not(.btn) { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top"><img src="assets/logo.svg" alt=""><span>Cloud<b>Fix</b> Tech</span></a>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#approach">Approach</a>
+        <a href="#about">About</a>
+        <a class="btn" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap hero">
+      <div>
+        <span class="badge">Launching 2027</span>
+        <h1>IT support, security and cloud, made clear.</h1>
+        <p class="lead">CloudFix Tech helps people and small teams understand and fix their IT: reliable support, practical cybersecurity awareness and cloud education, based in L'Aquila, Italy.</p>
+        <div class="cta">
+          <a class="btn" href="#contact">Get in touch</a>
+          <a class="btn btn-ghost" href="#services">What we do</a>
+        </div>
+      </div>
+      <div class="hero-art"><img src="assets/logo.svg" alt="CloudFix Tech logo: a cloud with a wrench inside a shield"></div>
+    </div>
+
+    <section id="services">
+      <div class="wrap">
+        <h2>What we do</h2>
+        <p class="sub">Three focus areas, built on years of hands-on work with enterprise Microsoft 365 and Azure environments.</p>
+        <div class="grid">
+          <div class="card">
+            <div class="icon">IT</div>
+            <h3>IT technical support</h3>
+            <p>Clear, patient help with Microsoft 365, accounts, email, devices and everyday IT problems.</p>
+          </div>
+          <div class="card">
+            <div class="icon">SEC</div>
+            <h3>Cybersecurity awareness</h3>
+            <p>Practical guidance on phishing, multi-factor authentication and safe account setup for small teams.</p>
+          </div>
+          <div class="card">
+            <div class="icon">EDU</div>
+            <h3>Cloud and IT education</h3>
+            <p>Beginner-friendly guides and explainers on Azure, Microsoft 365 and core IT skills.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="wrap">
+        <h2>How we work</h2>
+        <p class="sub">A simple, honest approach.</p>
+        <div class="steps">
+          <div><b>Understand first</b><span>We listen to the problem before suggesting any tool.</span></div>
+          <div><b>Explain in plain language</b><span>You should know what was done and why, without jargon.</span></div>
+          <div><b>Build security in</b><span>Good defaults, least privilege and multi-factor authentication from day one.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="about">
+          <h2>About the founder</h2>
+          <p>CloudFix Tech is founded by Abdoulie A. Jallow, an Azure, Microsoft 365 and security engineer with five years of experience supporting enterprise tenants, including three years in Microsoft Premier Support. He is completing an MSc in Applied Mathematics and Computer Science at the University of L'Aquila.</p>
+          <a class="btn btn-ghost" href="https://aajallow.live" rel="noopener">View the portfolio</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <h2>Get in touch</h2>
+        <p>Questions, ideas or collaboration? Send a short message and you'll get a reply.</p>
+        <a class="btn" href="mailto:hello@cloudfix.tech">hello@cloudfix.tech</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>&copy; <span id="y">2026</span> CloudFix Tech. L'Aquila, Italy.</span>
+      <span><a href="https://aajallow.live" rel="noopener">Founder portfolio</a> &middot; <a href="https://github.com/adibamba" rel="noopener">GitHub</a></span>
+    </div>
+  </footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
